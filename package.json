@@ -2,30 +2,21 @@
   "name": "promise-polyfill",
   "version": "0.2.0",
   "description": "yet, another polyfill implement Promise/A+",
-  "module": "es/index.js",
-  "main": "bundle/index.common.js",
-  "typings": "native/index.d.ts",
+  "main": "Promise.js",
   "files": [
     "es",
     "lib",
     "native"
   ],
   "scripts": {
-    "prepublishOnly": "npm-run-all -s clean compile",
-    "clean": "rm -rf native es lib",
-    "compile": "npm-run-all -s compile:*",
-    "compile:native": "tsc --declaration --outDir native",
-    "compile:esm": "babel src --source-maps --out-dir es --extensions '.js,.ts'",
-    "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test": "promises-aplus-tests Promise.js"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/huang-xiao-jian/promise-polyfill.git"
   },
   "keywords": [
-    "typescript",
-    "package"
+    "Promise A+"
   ],
   "author": "huang.jian <hjj491229492@hotmail.com>",
   "contributors": [
@@ -43,35 +34,20 @@
     "url": "https://github.com/huang-xiao-jian/promise-polyfill/issues"
   },
   "homepage": "https://github.com/huang-xiao-jian/promise-polyfill#README",
-  "dependencies": {
-    "@babel/runtime-corejs3": "^7.5.5"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/preset-typescript": "^7.1.0",
-    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
-    "@types/jest": "^24.0.6",
     "@types/node": "^12.0.2",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.1.0",
-    "coveralls": "^3.0.2",
     "cz-conventional-changelog": "3.0.2",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-import": "^2.18.2",
     "husky": "^3.0.0",
-    "jest": "^24.1.0",
-    "npm-run-all": "^4.0.2",
     "prettier": "^1.14.3",
     "pretty-quick": "^2.0.0",
-    "tslint": "^5.11.0",
-    "typescript": "^3.1.4"
+    "promises-aplus-tests": "^2.1.2"
   },
   "config": {
     "commitizen": {
